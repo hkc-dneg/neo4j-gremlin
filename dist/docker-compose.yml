@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  graph:
+    build: ./neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    expose:
+      - "7474"
+      - "7687"
+    volumes:
+      - ../volumes/:/data
+      # - ./neo4j/plugins:/plugins
+      - ./neo4j/custom:/custom
+
+
+  gremlin:
+    build: ./tinkerpop
+    ports:
+      - "8182:8182"
+    volumes:
+      - ../volumes/:/tmp/neo4j
+    links:
+      - "graph:graph"
