@@ -1,7 +1,7 @@
 FROM centos:7
 
-FROM neo4j:3.2.3
-#FROM neo4j:latest
+# FROM neo4j:3.2.3
+FROM neo4j:4.0.5
 
 ENV NEO4J_AUTH neo4j/admin
 
