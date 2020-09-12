@@ -2,7 +2,7 @@
 from setuptools import find_packages, setup
 
 setup(
-    name="service_restarter",
+    name="neo4j_gremlin",
     version="0.0.1",
     packages=find_packages("src/"),
     package_dir={"": "src/"},
